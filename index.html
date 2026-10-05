@@ -29,10 +29,10 @@
             async function escribirLinea(Linea) {
                 for (let letra of liena) {
                     consola.textContent += letra;
-                    await new Promise(r => SetTimeout(r, 50));
+                    await new Promise(r => setTimeout(r, 50));
             }
             consola.textContent += "\n";
-            await new Promise(r => SetTimeout(r, 500));
+            await new Promise(r => setTimeout(r, 500));
         }
         async function mostrarMensaje() {
             for (let linea of mensaje) {
