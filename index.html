@@ -4,41 +4,50 @@
 <meta charset="UTF-8">
 <title>Consola especial</title>
 <style>
-    body{
-        background-color: black;
-        color: #00ff00;
-        font-family: monospace;
-        padding: 20px;
+  body {
+    background-color: black;
+    color: #00ff00;
+    font-family: monospace;
+    padding: 20px;
+  }
+</style>
+</head>
+<body>
+  <pre id="consola"></pre>
+
+  <script>
+    const mensaje = [
+      "Cargando Sistema...",
+      "Analizando Datos...",
+      "Resultado Encontrado",
+      "Te amo ❤️",
+      "Eres la Persona más especial de mi vida",
+      "Para Caty",
+      "De: Brandon"
+    ];
+
+    let consola = document.getElementById("consola");
+
+    async function escribirLinea(Linea) {
+      for (let letra of Linea) {
+        consola.textContent += letra;
+        await new Promise(r => setTimeout(r, 50));
+      }
+      consola.textContent += "\n";
+      await new Promise(r => setTimeout(r, 500));
     }
-    </style>
-    </head>
-    <body>
-        <pre id="consola"></pre>
-    
-        <script>
-            const mensaje = [
-                "Cargando Sistema...",
-                "Analizando Datos...",
-                "Resultado Encontrado",
-                "Te amo ❤️ ",
-                "Eres la Persona mas especial de mi vida",
-                "Para Caty",
-                "De: Brandon"
-            ];
-            let consola = document.getElementById("consola");
-            async function escribirLinea(Linea) {
-                for (let letra of linea) {
-                    consola.textContent += letra;
-                    await new Promise(r => settimeout(r, 50));
-            }
-            consola.textContent += "\n";
-            await new Promise(r => settimeout(r, 500));
-        }
-        async function mostrarMensaje() {
-            for (let linea of mensaje) {
-                await escribirlinea(Linea);
-            }
-        }
+
+    async function mostrarMensaje() {
+      for (let Linea of mensaje) {
+        await escribirLinea(Linea);
+      }
+    }
+
+    mostrarMensaje();
+  </script>
+</body>
+</html>
+
         mostrarMensaje();
         </script>
         </body>
